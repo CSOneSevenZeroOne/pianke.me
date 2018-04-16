@@ -8,15 +8,15 @@ import {Provider} from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
 import "./reset.css"
 //组件导入部分
-import Header from './components/header/header';
+import Index2 from './components/index2/index2';
 
 
 let store = createStore((state = {
-
+        choicebool:true
 }, action)=> {
     switch(action.type) {
         case 'ABC':
-            return Object.assign({}, state, {});
+            return Object.assign({}, state, {choicebool:action.choicebool});
         case 'DECREMENT':
             return state
         default:
@@ -29,7 +29,7 @@ ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
             <div>
-                <Route exact path="/" component={Header} />
+                <Route exact path="/" component={Index2} />
             </div>
         </Provider>
     </HashRouter>, document.getElementById('root'));

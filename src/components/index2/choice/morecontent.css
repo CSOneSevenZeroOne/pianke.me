@@ -1,0 +1,39 @@
+
+#more-content{
+overflow:hidden;
+}
+.past-content-title{
+overflow:hidden;
+padding-left: 440px;
+background-image: url(https://qnstatic.pianke.me/public/assets/img/line-bg.png);
+background-size: contain;
+background-repeat: no-repeat;
+background-position: 5px 73px;
+}
+.past-content-title>div{
+padding-top: 60px;
+background-position: 0 63px;
+padding-bottom: 80px;
+}
+.title-cpt{
+font-size:16px;
+clear: both;
+padding-bottom: 40px;
+background-repeat: no-repeat;
+padding-top: 70px;
+padding-left: 28px;
+background-position: 0 74px;
+background-image: url(https://qnstatic.pianke.me/public/assets/img/square.png);
+}
+/*瀑布流*/
+.container-fluid {
+padding: 20px;
+}
+.box {
+margin-bottom: 20px;
+float: left;
+width: 220px;
+}
+.box img {
+max-width: 100%
+}
