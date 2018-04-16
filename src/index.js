@@ -8,8 +8,16 @@ import {Provider} from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
 import "./reset.css"
 //组件导入部分
+
 import Index2 from './components/index2/index2';
 
+
+
+import Header from './components/header/header';
+// 客户端
+import Client from './components/client/client';
+// 底部
+import Footer from './components/footer/footer';
 
 let store = createStore((state = {
         choicebool:true
@@ -30,6 +38,9 @@ ReactDOM.render(
         <Provider store={store}>
             <div>
                 <Route exact path="/" component={Index2} />
+                <Header />
+                <Route exact path="/" component={Client} />
+                <Footer />
             </div>
         </Provider>
     </HashRouter>, document.getElementById('root'));
