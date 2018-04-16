@@ -6,7 +6,7 @@ import {HashRouter, Route, Link} from "react-router-dom";
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
-
+import "./reset.css"
 //组件导入部分
 import Header from './components/header/header';
 
