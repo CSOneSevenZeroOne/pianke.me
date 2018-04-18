@@ -18,10 +18,10 @@ import Header from './components/header/header';
 import Client from './components/client/client';
 // 底部
 import Footer from './components/footer/footer';
-<<<<<<< HEAD
+
 // 登录
 import Login from './components/login/login';
-// 登录
+// 修改密码
 import Change from './components/change/change';
 // 设置用户信息
 import Setuser from './components/setuser/setuser';
@@ -45,8 +45,8 @@ ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
             <div>
-                <Route exact path="/" component={Index2} />
                 <Header />
+                <Route exact path="/" component={Index2} />
                 <Login />
                 <Route exact path="/client" component={Client} />
                 <Route exact path="/change" component={Change} />
