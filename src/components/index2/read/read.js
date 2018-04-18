@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route, Link} from "react-router-dom";
 import {connect} from 'react-redux'
 
+import $ from "jquery"
 import "./read.css"
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
             return <div key={i} className="article-cpt">
                 <div className="left">
                     <div className="article-title">
-                        <a>{e.title}</a>
+                        <a onClick={this.props.gettitle} href="#/indexread">{e.title}</a>
                     </div>
                     <div className="article-author">
                         <a>By /{e.name}</a>
@@ -37,7 +38,7 @@ class App extends Component {
                           </a>
                        </span>
                    </div>
-                    <div className="article-others">
+                    <div className="chenkart-others">
                         {e.read} k次阅读  |  评论:{e.comment}  |  喜欢:{e.link}
                     </div>
                 </div>
@@ -75,8 +76,12 @@ export default connect((state) =>{
     }
 }, (dipatch) =>{
     return {
-        getstate(){
-            dipatch({})
+        gettitle(e){
+            var word=$(e.target).text();
+            dipatch({
+                type:"ABC",
+                hoverword:word
+            })
         }
     }
 })(App);

@@ -10,7 +10,7 @@ import "./reset.css"
 //组件导入部分
 
 import Index2 from './components/index2/index2';
-
+import Indexread from './components/indexread/indexread';
 
 
 import Header from './components/header/header';
@@ -30,17 +30,18 @@ import Introduce from './components/introduce/introduce';
 
 
 let store = createStore((state = {
-        choicebool:true
-}, action)=> {
-    switch(action.type) {
+    hoverword : ""
+}, action) =>{
+    switch(action.type){
         case 'ABC':
-            return Object.assign({}, state, {choicebool:action.choicebool});
+            return Object.assign({}, state, {hoverword:action.hoverword});
         case 'DECREMENT':
             return state
         default:
             return state
     }
 })
+
 
 
 ReactDOM.render(
@@ -54,9 +55,11 @@ ReactDOM.render(
                 <Route exact path="/change" component={Change} />
                 <Route exact path="/setuser" component={Setuser} />
                 <Route exact path="/introduce" component={Introduce} />
+                <Route path="/indexread" component={Indexread}/>
                 <Footer />
             </div>
         </Provider>
+
     </HashRouter>, document.getElementById('root'));
 registerServiceWorker();
 

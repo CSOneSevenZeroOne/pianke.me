@@ -65,13 +65,6 @@ class App extends Component {
                 <div className="user-list">
                     {this.vFor(this.state.arr)}
                 </div>
-                <div onClick={this.props.getblock.bind(this)} className="more-botton" style={{display:this.props.state.choicebool?"block":"none"}}>
-                    <div className="btn-box">
-                        <div className="btn btn-more  ">
-                            查看更多精选内容
-                        </div>
-                    </div>
-                </div>
                 <div className="back-top"></div>
             </div>
 
@@ -89,11 +82,6 @@ export default connect((state) =>{
     }
 }, (dipatch) =>{
     return {
-        getblock(){
-            dipatch({
-                type:"ABC",
-                choicebool:!this.props.state.choicebool
-            })
-        }
+
     }
 })(App);
