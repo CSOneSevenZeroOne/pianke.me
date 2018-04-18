@@ -12,6 +12,7 @@ background-position:0 74px;
 background-image:url(https://qnstatic.pianke.me/public/assets/img/square.png);
 }
 .left{
+position:relative;
 padding:20px 0;
 padding-left:20px;
 width:640px;
@@ -58,10 +59,11 @@ width:5px;
 padding-left:3px;
 display:inline-block;
 }
-.article-others{
+.chenkart-others{
+position:absolute;
 font-weight:lighter;
 color:#999;
-bottom:10px;
+bottom:20px;
 }
 /*right*/
 .right{
