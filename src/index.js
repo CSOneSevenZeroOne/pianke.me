@@ -19,6 +19,29 @@ import Client from './components/client/client';
 // 底部
 import Footer from './components/footer/footer';
 
+//radio
+import Radio from './components/radio/radioall';
+
+//love
+import Loveall from './components/radio/loveall';
+
+//travel
+import Travelall from './components/radio/travelall.js';
+
+//story
+import Storyall from './components/radio/storyall.js';
+
+//music
+import Musicall from './components/radio/musicall.js';
+
+//movie
+import Movieall from './components/radio/movieall.js';
+
+//read
+import Readall from './components/radio/readall.js';
+
+import Love from './components/radio/love/love-logo/love.js';
+
 let store = createStore((state = {
         choicebool:true
 }, action)=> {
@@ -32,14 +55,25 @@ let store = createStore((state = {
     }
 })
 
-
+//<Header />
+//<Footer />
+//<Route exact path="/Loveall" component={Loveall} />
 ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
             <div>
-                <Route exact path="/" component={Index2} />
-                <Header />
-                <Route exact path="/" component={Client} />
+          	   <Header />
+                <Route exact path="/Index2" component={Index2} />             
+                <Route exact path="/client" component={Client} />
+                <Route exact path="/Radio" component={Radio} />
+                <Route path="/Loveall" component={Loveall} />
+                <Route path="/Travelall" component={Travelall} />
+                <Route path="/Storyall" component={Storyall} />
+                <Route path="/Musicall" component={Musicall} />
+                <Route path="/Movieall" component={Movieall} />
+                <Route path="/Readall" component={Readall} />
+                
+                
                 <Footer />
             </div>
         </Provider>
