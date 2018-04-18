@@ -19,6 +19,14 @@ import Client from './components/client/client';
 // 底部
 import Footer from './components/footer/footer';
 
+// 登录
+import Login from './components/login/login';
+// 修改密码
+import Change from './components/change/change';
+// 设置用户信息
+import Setuser from './components/setuser/setuser';
+
+
 let store = createStore((state = {
     hoverword : ""
 }, action) =>{
@@ -37,14 +45,18 @@ let store = createStore((state = {
 ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
-        <div>
-            <Header/>
-            <Route exact path="/" component={Index2}/>
-            <Route path="/client" component={Client}/>
-            <Route path="/indexread" component={Indexread}/>
-            <Footer/>
-        </div>
-    </Provider>
+            <div>
+                <Header />
+                <Route exact path="/" component={Index2} />
+                <Login />
+                <Route path="/indexread" component={Indexread}/>
+                <Route exact path="/client" component={Client} />
+                <Route exact path="/change" component={Change} />
+                <Route exact path="/setuser" component={Setuser} />
+                <Footer />
+            </div>
+        </Provider>
+
     </HashRouter>, document.getElementById('root'));
 registerServiceWorker();
 
