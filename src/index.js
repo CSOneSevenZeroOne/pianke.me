@@ -13,8 +13,13 @@ import Header from './components/header/header';
 import Client from './components/client/client';
 // 底部
 import Footer from './components/footer/footer';
+// 登录
+import Login from './components/login/login';
+// 登录
+import Change from './components/change/change';
+// 设置用户信息
+import Setuser from './components/setuser/setuser';
 let store = createStore((state = {
-
 }, action)=> {
     switch(action.type) {
         case 'ABC':
@@ -32,7 +37,10 @@ ReactDOM.render(
         <Provider store={store}>
             <div>
                 <Header />
-                <Route exact path="/" component={Client } />
+                <Login />
+                <Route exact path="/client" component={Client} />
+                <Route exact path="/change" component={Change} />
+                <Route exact path="/setuser" component={Setuser} />
                 <Footer />
             </div>
         </Provider>

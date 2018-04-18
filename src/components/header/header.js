@@ -23,10 +23,10 @@ class header extends Component {
                         <li className=""><a href="javascript:;">电台</a></li>
                         <li className=""><a href="javascript:;">碎片</a></li>
                         <li className="hidden"><a href="javascript:;">动态</a></li>
-                        <li className=""><a href="javascript:;">客户端</a></li>
+                        <li className=""><a href="#/client">客户端</a></li>
                     </ul>
                     <div className="navbar-icon">
-                        <div className="editer"><div>
+                        <div className="editer gologin"><div>
                             <img src="http://qnstatic.pianke.me/public/assets/img/edit-icon.png" width="19px" height="20px" /></div>
                         </div>
                         <div className="massage hidden">
@@ -42,8 +42,8 @@ class header extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="userinfo hidden"><a href="javascript:;"><img src="http://qnstatic.pianke.me/public/assets/img/user-default-img.png" className="user-icon" /></a> <div className="msg-menu"><div className="drop-menu userinfo-drop"><ul><li><a href="">账号设置</a></li> <li><a>退出</a></li></ul></div></div></div>
-                        <div className="login-btn"><div>登录&nbsp;<span>/</span>&nbsp;注册</div></div></div></div></header>
+                        <div className="userinfo hidden"><a href="javascript:;"><img src="http://qnstatic.pianke.me/public/assets/img/user-default-img.png" className="user-icon" /></a> <div className="msg-menu"><div className="drop-menu userinfo-drop"><ul><li><a href="#/setuser">账号设置</a></li> <li><a>退出</a></li></ul></div></div></div>
+                        <div className="login-btn gologin"><div>登录&nbsp;<span>/</span>&nbsp;注册</div></div></div></div></header>
         );
     }
 	componentDidMount(){
