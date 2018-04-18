@@ -45,4 +45,25 @@ router.get('/verification',function(request,response) {
 	})
 })
 
+router.get('/outlogin',function(request,response) {
+	response.setHeader("Access-Control-Allow-Origin", "*");
+	response.setHeader("Content-Type", "text/plain;charset=UTF-8");
+	console.log(request.query);
+	connection.query(`SELECT * FROM user where u_tel=${request.query.tel} and status=1 `, function(error, results, fields){
+		console.log(results);
+		if(results){
+			if(results.length!=0) {
+				var res = JSON.stringify(results)
+				connection.query(`UPDATE user SET status=0 WHERE u_tel=${request.query.tel}`, function (error, results, fields) {
+					response.end("已退出");
+				})
+			}else {
+				response.end("失败")
+			}
+		}else {
+			response.end("失败")
+		}
+	})
+})
+
 module.exports = router;

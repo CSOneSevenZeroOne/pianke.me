@@ -42,7 +42,7 @@ class header extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="userinfo hidden"><a href="javascript:;"><img src="http://qnstatic.pianke.me/public/assets/img/user-default-img.png" className="user-icon" /></a> <div className="msg-menu"><div className="drop-menu userinfo-drop"><ul><li><a href="#/setuser">账号设置</a></li> <li><a>退出</a></li></ul></div></div></div>
+                        <div className="userinfo hidden"><a href="#/introduce"><img src="http://qnstatic.pianke.me/public/assets/img/user-default-img.png" className="user-icon" /></a> <div className="msg-menu"><div className="drop-menu userinfo-drop"><ul><li><a href="#/setuser">账号设置</a></li> <li className="outlogin"><a href="#/">退出</a></li></ul></div></div></div>
                         <div className="login-btn gologin"><div>登录&nbsp;<span>/</span>&nbsp;注册</div></div></div></div></header>
         );
     }

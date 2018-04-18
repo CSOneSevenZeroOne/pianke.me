@@ -40,11 +40,32 @@ router.post('/getimg', upimg.single('logo'), function (req, res) {
 	res.send(imgname);
 });
 
-router.post('/set', upimg.single('logo'), function (req, res) {
-	res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader("Content-Type", "text/plain;charset=UTF-8");
-	res.send(imgname);
-});
+router.post('/set',function(request,response) {
+	response.setHeader("Access-Control-Allow-Origin", "*");
+	response.setHeader("Content-Type", "text/plain;charset=UTF-8");
+	console.log(request.body);
+	connection.query(`SELECT * FROM user where u_tel=${request.body.oldtel} and status=1 `, function(error, results, fields){
+		console.log(results);
+		if(results){
+			if(results.length!=0) {
+				var res = JSON.stringify(results)
+				connection.query(`UPDATE user SET ? WHERE u_tel=${request.body.oldtel}`, {
+					u_tel: request.body.newtel,
+					u_img: request.body.img,
+					u_name: request.body.name,
+					u_sex: request.body.sex,
+					u_xinxi: request.body.xinxi,
+				}, function (error, results, fields) {
+					response.end("设置成功");
+				})
+			}else {
+				response.end("失败")
+			}
+		}else {
+			response.end("失败")
+		}
+	})
+})
 
 module.exports = router;
 

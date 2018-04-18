@@ -25,6 +25,8 @@ import Login from './components/login/login';
 import Change from './components/change/change';
 // 设置用户信息
 import Setuser from './components/setuser/setuser';
+// 用户信息
+import Introduce from './components/introduce/introduce';
 
 
 let store = createStore((state = {
@@ -46,12 +48,12 @@ ReactDOM.render(
         <Provider store={store}>
             <div>
                 <Header />
-                <Route exact path="/" component={Index2} />
                 <Login />
+                <Route exact path="/" component={Index2} />
                 <Route exact path="/client" component={Client} />
                 <Route exact path="/change" component={Change} />
                 <Route exact path="/setuser" component={Setuser} />
-
+                <Route exact path="/introduce" component={Introduce} />
                 <Footer />
             </div>
         </Provider>

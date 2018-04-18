@@ -18,11 +18,9 @@ module.exports = function () {
 				} else {
 					alert("登录成功")
 					var img=JSON.parse(res)[0].u_img
-					if(img){
-						img="http://qnstatic.pianke.me/public/assets/img/user-default-img.png"
-					}
 					sessionStorage.setItem("u_img", img)
 					sessionStorage.setItem("u_tel",JSON.parse(res)[0].u_tel)
+					sessionStorage.setItem("u_name",JSON.parse(res)[0].u_name)
 					$(".login").hide()
 					$("body").css("overflow", "auto")
 					$(".login-btn").eq(0).addClass("hidden")
