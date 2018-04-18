@@ -8,7 +8,7 @@ var router = express.Router();
 
 
 var app = express();
-
+app.use('/',require('./indexread.js'))
 
 
 app.listen(8888);

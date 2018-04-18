@@ -74,35 +74,7 @@ height: 1px;
 top: 0;
 border-top: 1px solid #666;
 }
-.more-botton{
-clear: both;
-text-align: center;
-margin: 0 auto;
-padding-top: 84px;
-padding-bottom: 94px;
-width: 190px;
-height: 45px;
-line-height: 45px;
-cursor:pointer;
-}
-.btn-box{
-padding:4px;
-border: 1px solid rgba(120,188,133,0.6);
-border-radius:25px;
-}
-.btn{
-color: #fff;
-background-color: #78bc85;
-border-radius: 25px;
-font-weight: 100;
-}
-.btn:hover{
-background-color: #57ad68;
-}
-.btn-more{
-box-shadow: 0 1px 3px 0 #fff, 0 2px 3px 0 #78bc85;
-font-size:16px;
-}
+
 /*back-top*/
 .back-top{
 cursor: pointer;

@@ -20,7 +20,6 @@ class App extends Component {
 
     render(){
         return (
-
             <div id="index2">
                 <HoverImg/>
                 <Read/>
@@ -28,8 +27,6 @@ class App extends Component {
                 <Tot/>
                 <Morecontent/>
             </div>
-
-
         );
     }
 }
