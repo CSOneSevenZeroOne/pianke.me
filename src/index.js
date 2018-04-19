@@ -9,6 +9,10 @@ import registerServiceWorker from './registerServiceWorker';
 import "./reset.css"
 //组件导入部分
 
+// import Header from './components/header/header';
+import Container from './components/timeline/contain/container'
+
+
 import Index2 from './components/index2/index2';
 import Indexread from './components/indexread/indexread';
 import Indexradio from './components/indexradio/indexradio';
@@ -18,6 +22,7 @@ import Header from './components/header/header';
 import Client from './components/client/client';
 // 底部
 import Footer from './components/footer/footer';
+
 
 
 //radio
@@ -77,27 +82,22 @@ ReactDOM.render(
             <div>
 				<Header />
                 <Login />
-
-				<Route exact path="/" component={Index2} />
+				 <Route exact path="/" component={Index2} />
                 <Route exact path="/client" component={Client} />
                 <Route exact path="/change" component={Change} />
                 <Route exact path="/setuser" component={Setuser} />
                 <Route exact path="/introduce" component={Introduce} />
+              <Route path="/container" component={Container} />
                 <Route path="/indexread" component={Indexread}/>
                 <Route path="/indexradio" component={Indexradio} />
-                <Route path="/Radio" component={Radio} />
+               <Route path="/Radio" component={Radio} />
                 <Route path="/Loveall" component={Loveall} />
                 <Route path="/Travelall" component={Travelall} />
                 <Route path="/Storyall" component={Storyall} />
                 <Route path="/Musicall" component={Musicall} />
                 <Route path="/Movieall" component={Movieall} />
-                <Route path="/Readall" component={Readall} />
-				
+                <Route path="/Readall" component={Readall} />				
 				<Footer />
-
-
-
-
             </div>
         </Provider>
 
