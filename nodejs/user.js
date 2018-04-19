@@ -9,7 +9,11 @@ var router = express.Router();
 
 var app = express();
 
+
+app.use('/upFiles',require('./uploadTimeline'))
+
 app.use('/',require('./indexread.js'))
+
 
 
 

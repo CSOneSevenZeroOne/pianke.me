@@ -9,6 +9,10 @@ import registerServiceWorker from './registerServiceWorker';
 import "./reset.css"
 //组件导入部分
 
+// import Header from './components/header/header';
+import Container from './components/timeline/contain/container'
+
+
 import Index2 from './components/index2/index2';
 import Indexread from './components/indexread/indexread';
 import Indexradio from './components/indexradio/indexradio';
@@ -19,6 +23,7 @@ import Header from './components/header/header';
 import Client from './components/client/client';
 // 底部
 import Footer from './components/footer/footer';
+
 
 
 //radio
@@ -55,6 +60,7 @@ import Introduce from './components/introduce/introduce';
 
 
 
+
 let store = createStore((state = {
     hoverword : "",
     radioname:"",
@@ -74,22 +80,22 @@ let store = createStore((state = {
     }
 })
 
-
+				
 ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
             <div>
-                <Header />
+				<Header />
                 <Login />
-
-                <Route exact path="/" component={Index2} />
-                <Route  path="/client" component={Client} />
-                <Route  path="/change" component={Change} />
-                <Route  path="/setuser" component={Setuser} />
-                <Route  path="/introduce" component={Introduce} />
+				 <Route exact path="/" component={Index2} />
+                <Route exact path="/client" component={Client} />
+                <Route exact path="/change" component={Change} />
+                <Route exact path="/setuser" component={Setuser} />
+                <Route exact path="/introduce" component={Introduce} />
+              <Route path="/container" component={Container} />
                 <Route path="/indexread" component={Indexread}/>
-                <Route  path="/indexradio" component={Indexradio} />
-                <Route  path="/Radio" component={Radio} />
+                <Route path="/indexradio" component={Indexradio} />
+               <Route path="/Radio" component={Radio} />
                 <Route path="/Loveall" component={Loveall} />
                 <Route path="/Travelall" component={Travelall} />
                 <Route path="/Storyall" component={Storyall} />
