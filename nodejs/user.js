@@ -9,7 +9,7 @@ var router = express.Router();
 
 var app = express();
 
-
+app.use('/upFiles',require('./uploadTimeline'))
 
 app.listen(8888);
 console.log("开启服务器");

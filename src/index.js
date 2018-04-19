@@ -8,7 +8,8 @@ import {Provider} from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
 import "./reset.css"
 //组件导入部分
-import Header from './components/header/header';
+// import Header from './components/header/header';
+import Container from './components/timeline/contain/container'
 
 
 let store = createStore((state = {
@@ -29,7 +30,8 @@ ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
             <div>
-                <Route exact path="/" component={Header} />
+                {/*<Route exact path="/" component={Header} />*/}
+                <Route path="/container" component={Container} />
             </div>
         </Provider>
     </HashRouter>, document.getElementById('root'));
