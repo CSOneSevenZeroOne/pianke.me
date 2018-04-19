@@ -2,92 +2,86 @@ import React, {Component} from 'react';
 import {Route, Link} from "react-router-dom";
 import {connect} from 'react-redux'
 
-import "./indexread.css"
 import $ from "jquery"
-
-//导入组件
-
+import "./indexradio.css"
 
 class App extends Component {
     constructor(props){
         super(props)
         this.state = {
-            arr : {},
-            addOne:0
+            obj : {}
         }
+    }
+
+    vFor(arr){
+        return arr.map((e, i) =>{
+            return <div key={i}>{e}</div>
+        })
     }
 
     render(){
         return (
-            <div id="indexread">
-                <div className="index-content main">
-                    <div className="article-header-info">
-                        <div className="article-type">
-                            <a>自由写作</a>
+
+            <div id="indexradio" className="main">
+                <audio id="oaudio" src={this.state.obj.playsrc}>您的浏览器不支持 audio 标签。</audio>
+
+                <div className="ting-info-box">
+                    <div className="radio-info-content ting-info-content">
+                        <div className="t-img">
+                            <img src={this.state.obj.imgsrc} alt=""/>
                         </div>
-                        <div className="article-title">
-                            {this.state.arr.title}
-                        </div>
-                        <div className="article-others">
-                            <a>
-                                <img src={this.state.arr.otherimg} alt=""/> <i> {this.state.arr.other}</i>
-                            </a>
-                            <span>
-                                2016-3-8 18:55  |  阅读时间: 6min  |  阅读次数: {this.state.arr.num} k
-                            </span>
+                        <div className="radio-info ting-info">
+                            <div className="radio-title">
+                                {this.state.obj.title}
+                            </div>
+                            <div className="ting-others">
+                                2.4 k次播放  |  评论: 2  |  喜欢: 39
+                            </div>
+                            <div className="aors">
+                                <div className="ting-author">
+                                    主播:
+                                    <a>{this.state.obj.anchor}</a>
+                                </div>
+                                <div className="article-author">
+                                    原文:
+                                    <a>{this.state.obj.original}</a>
+                                </div>
+                            </div>
+
+                            <div className="play-all">
+                                <div onClick={this.pauseaudio.bind(this)} className="btn-play play-status-btn">
+                                    播放Ting
+                                </div>
+                                <div onClick={this.playaudio.bind(this)} className="btn-pause play-status-btn">
+                                    暂停Ting
+                                </div>
+                            </div>
+
+                            <div className="likes-cpt ting-like">
+
+                            </div>
+                            <div className="ting-share">
+                                <div className="share-icon-cpt ting-share-icon">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="art-content">
-                        <p>
-                            <img src={this.state.arr.src} alt=""/>
-                        </p>
-                        <p>
-                            文/{this.state.arr.other}
-                        </p>
-                        <p>&nbsp; </p>
-                        <p>01</p>
-                        <p>{this.state.arr.text1}</p>
-                        <p>{this.state.arr.text2}</p>
-                        <p>&nbsp; </p>
-                        <p>02</p>
-                        <p>2012年，陶喜大学毕业，处了四年的大学男友去了新加坡，远山远海的异地恋正是最难熬的时候，陶喜在中山路的拐角遇见李云晖。</p>
-                        <p>陶喜那时才知道李云晖来广州工作了，在一家饮水机工厂，三班倒制，今天下了早班出来走走，没想到会遇见陶喜。</p>
-                        <div className="art-war">
-                            <div className="article-warn">
-                                *此文章为原创作品，非商业使用转载务必保留本文地址及原作者，商业使用请联系
-                                <a>片刻网</a>
 
-                            </div>
-                            <span className="report">举报</span>
+                    <div className="ting-article-content">
+                        <div className="title-cpt">
+                            原文
                         </div>
-                        <div className="article-handle">
-                            <div className="likes-cpt">
-                                450
-                            </div>
-                            <div className="share-cpt">
-                                <div className="share-sina"></div>
-                                <div className="share-wechat">
-                                    <div className="code">
-                                        <img width="200" src="http://api5.pianke.me/version5.0/wxshare/qrcode.php?url=http%3A%2F%2Fpianke.me%2Fversion4.0%2Fweixin02%2Fwxshare.php%23!%2Farticle%2F56deaf9f5e774367348b45c3" alt=""/>
-                                    </div>
-                                </div>
-                                <div className="share-qzone"></div>
-                                <div className="share-dou"></div>
-                            </div>
-                        </div>
-
-                        <div className="is-login-cpt">
-                            <div className="if-no-login" style={{display : "none"}}>
-                                快来
-                                <a>登录</a>
-                                发表你的精彩评论啦
-                            </div>
-                            <div className="is-login">
-                                <textarea placeholder="发表你的精彩评论啦" ></textarea>
-                                <div className="btn">
-                                    发表评论
-                                </div>
-                            </div>
+                        <div className="art-content">
+                            <span style={{display: "block",paddingBottom: "10px"}}> - </span>
+                            咖啡屋喧闹的一角独坐着一个老人，身子佝偻在桌边，面前端着一份报纸。在一副高龄的没落里，
+                            他回想这一生享受的欢乐何其稀少，当他还强壮、健谈而且帅气的时候。他知道自己老了很多；
+                            他能看得到，能感觉到。但他觉得年轻的时光好像就在昨天，就在倏忽之间，一切都如此短暂。
+                            他想起“谨慎”对他的欺骗有多深，而他又如何一直疯狂地轻信着这样的匡骗：“明天吧。
+                            你有的是时间。”他想起那些被扼杀掉的冲动，被他...
+                            <span className="view-all">
+                                <a >VIEW ALL <img src="http://qnstatic.pianke.me/public/assets/img/viewall.png" alt=""/></a>
+                            </span>
                         </div>
                     </div>
 
@@ -101,13 +95,13 @@ class App extends Component {
                             <div className="comment-cpt">
                                 <div className="comment-user-icon">
                                     <a>
-                                        <img src={this.state.arr.commentsrc} alt=""/>
+                                        <img src="http://hpimg.pianke.com/8b45aab71f63d339e1e1db44aef53f8c20170523.jpg?imageView2/2/w/90/format/jpg" alt=""/>
                                     </a>
                                 </div>
                                 <div className="comment-info">
                                     <div className="comment-user-info">
                                         <a>
-                                            {this.state.arr.commentname}
+                                            吕宏道
                                         </a>
                                         2018-4-16 22:45
                                         <span onClick={this.getreply.bind(this)} className="comment-reply">
@@ -116,7 +110,7 @@ class App extends Component {
                                         <span onClick={this.getConfirm.bind(this)} className="comment-del report">举报</span>
                                     </div>
                                     <div className="comment-content">
-                                        {this.state.arr.commenttext}
+                                        就算冲动又如何，去做，别让自己后悔
                                     </div>
 
                                     <div className="Confirm" style={{display:"none"}}>
@@ -142,6 +136,7 @@ class App extends Component {
             </div>
         );
     }
+
     puit(){
         $(".Confirm").css({display:"none"})
     }
@@ -149,9 +144,9 @@ class App extends Component {
         $(".Confirm").css({display:"block"})
     }
     addone(){
-     this.setState({
-         addOne:this.state.addOne+1
-     })
+        this.setState({
+            addOne:this.state.addOne+1
+        })
         if(this.state.addOne%2==0){
             $(".comment-number").text("0").css({color:"#999",backgroundImage:"url("+"https://qnstatic.pianke.me/public/assets/img/praise.png"+")"})
 
@@ -162,38 +157,55 @@ class App extends Component {
     }
     //回复
     getreply(){
-      var str=  $(".com-textarea").css("display")=="none"?"block":"none"
+        var str=  $(".com-textarea").css("display")=="none"?"block":"none"
         $(".com-textarea").css({display:str})
         console.log(str);
     }
     puitnone(){
         $(".com-textarea").css({display:"none"})
     }
+    playaudio(){
+        $(".btn-pause").css({zIndex:-1})
+        $(".btn-play").css({zIndex:3})
+        $("#oaudio")[0].pause();
 
+    }
+    pauseaudio(){
+        $(".btn-pause").css({zIndex:3})
+        $(".btn-play").css({zIndex:-1})
+        $("#oaudio")[0].play();
+    }
     componentDidMount(){
-        var word = this.props.state.hoverword;
-        var url = "http://localhost:8888/indexread"
+        //播放autoplay
+        $("#oaudio").attr({autoplay:"autoplay"})
+
+        var word = this.props.state.radioname;
+        console.log(this.props.state.radioname);
+        var url = "http://localhost:8888/indexradio"
         this.serverRequest = $.post(url, function(result){
             var res = JSON.parse(result)
             for(var i = 0; i < res.length; i++){
                 if(res[i].title == word){
                     this.setState({
-                        arr : res[i]
+                        obj : res[i]
                     });
                     var str = JSON.stringify(res[i])
-                    window.sessionStorage.setItem('indexread', str);
+                    console.log(str);
+                    window.sessionStorage.setItem('indexradio', str);
                 }
             }
         }.bind(this));
-        var obj = JSON.parse(window.sessionStorage.getItem('indexread') || '[]');
+        var obj = JSON.parse(window.sessionStorage.getItem('indexradio') || '{}');
         this.setState({
-            arr : obj
+            obj : obj
         });
+
     }
 
     componentWillUnmount(){
         this.serverRequest.abort();
     }
+
 }
 
 
@@ -204,7 +216,7 @@ export default connect((state) =>{
     }
 }, (dipatch) =>{
     return {
-        getstate(){
+        getname(){
             dipatch({})
         }
     }

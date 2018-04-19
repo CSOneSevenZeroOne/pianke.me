@@ -11,7 +11,7 @@ import "./reset.css"
 
 import Index2 from './components/index2/index2';
 import Indexread from './components/indexread/indexread';
-
+import Indexradio from './components/indexradio/indexradio';
 
 import Header from './components/header/header';
 // 客户端
@@ -28,11 +28,12 @@ import Setuser from './components/setuser/setuser';
 
 
 let store = createStore((state = {
-    hoverword : ""
+    hoverword : "",
+    radioname:""
 }, action) =>{
     switch(action.type){
         case 'ABC':
-            return Object.assign({}, state, {hoverword:action.hoverword});
+            return Object.assign({}, state, {hoverword:action.hoverword,radioname:action.radioname});
         case 'DECREMENT':
             return state
         default:
@@ -50,9 +51,10 @@ ReactDOM.render(
                 <Route exact path="/" component={Index2} />
                 <Login />
                 <Route path="/indexread" component={Indexread}/>
-                <Route exact path="/client" component={Client} />
-                <Route exact path="/change" component={Change} />
-                <Route exact path="/setuser" component={Setuser} />
+                <Route  path="/client" component={Client} />
+                <Route  path="/change" component={Change} />
+                <Route  path="/setuser" component={Setuser} />
+                <Route  path="/indexradio" component={Indexradio} />
                 <Footer />
             </div>
         </Provider>
