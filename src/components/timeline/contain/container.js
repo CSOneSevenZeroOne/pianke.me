@@ -8,7 +8,7 @@ class Container extends Component {
         super(props)
         this.state = {
             bool:true,
-            value:"",
+            length:"",
             vtext:"",
             dataArr:[{
                 src:"http://hpimg.pianke.com/51028c5868588b9d42f269c12d75e88b20180418.jpg",
@@ -91,7 +91,7 @@ class Container extends Component {
     }
     getValue(e){
         this.setState({
-            value:e.target.value.length
+            length:e.target.value.length
         })
     }
     showTag(e){
@@ -110,18 +110,44 @@ class Container extends Component {
         }
     }
     uploadAll(){
-        console.log($('#timelineForm')[0])
-        $.ajax({
-               url: 'http://localhost:8888/upFiles',
-               type: 'POST',
-               cache: false, //不必须
-               data: new FormData($('#timelineForm')[0]),
-               processData: false,
-               contentType: false,
-               success: function(data) {
-                 console.log(data);
-               }
-        })
+        console.log($("textarea").val());
+        if($("textarea").val()==""){
+            alert("请先填写内容")
+        }else{
+            if(window.sessionStorage.getItem("u_tel")==undefined){
+                alert("请先登录")
+            }else{
+                $.ajax({
+                    url: 'http://localhost:8888/setuser/getimg',
+                    type: 'POST',
+                    cache: false, //不必须
+                    data: {
+                        u_photo:new FormData($('#timeline')[0]),
+                        u_tel:window.sessionStorage.getItem("u_tel"),
+                        u_cont:$("textarea").val()
+                    },
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        console.log(data);
+                        $.ajax({
+                            url:'http://localhost:8888/uploads',
+                            type:"POST",
+                            data: {
+                                u_photo:'http://localhost:8888/' + data,
+                                u_tel:window.sessionStorage.getItem("u_tel"),
+                                u_cont:$("textarea").val(),
+                                u_img:""
+                            },
+                            success:function (res) {
+                                console.log("发布成功");
+                            }
+                        })
+                    }
+                })
+            }
+        }
+
     }
     vFor(arr){
         var htmlArr =arr.map((e,i)=>{
@@ -172,7 +198,7 @@ class Container extends Component {
     render() {
         return (
 
-            <div className="container">
+            <div className="ok">
                 <div className="publish-time">
                     <div className="nowdate">
                         <span>{(()=>{
@@ -224,7 +250,7 @@ class Container extends Component {
                         })()}</span>
                     </div>
                     <div className="publish-content">
-                        <form id="timelineForm">
+
                         <textarea maxLength="140" placeholder="这一刻，你想说什么？"onChange={this.getValue.bind(this)}></textarea>
                         <div className="timeLine-others">
                             <div className="timelineType">
@@ -233,7 +259,9 @@ class Container extends Component {
                             </div>
                             <div className="upload-img">
                                 图片
-                                <input type="file" accept="image/gif,image/jpg,image/png" id="imgFile"/>
+                                <form action="" id="timeline">
+                                <input type="file" accept="image/gif,image/jpg,image/png" name="logo" id="imgFile"/>
+                                </form>
                                 <div className="imgDiv" style={{display:'none'}}>
                                     <div className="uploadImg">
                                         <span width="130px" style={{display:'none'}}></span>
@@ -274,10 +302,9 @@ class Container extends Component {
                                     }else{
                                         return v;
                                     }
-                                }(this.state.value)}</span><span>/140</span><span>字</span>
+                                }(this.state.length)}</span><span>/140</span><span>字</span>
                             </div>
                         </div>
-                        </form>
                     </div>
                 </div>
                 <div>

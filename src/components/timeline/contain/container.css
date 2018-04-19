@@ -11,7 +11,7 @@ html, body {
     background-image: url(https://qnstatic.pianke.me/public/assets/img/bgImg.png);
     background-repeat: repeat-x;
 }
-.container{
+.ok{
     width: 1200px;
     margin: 0 auto;
     min-height: calc(100% - 210px);
@@ -338,7 +338,7 @@ textarea[placeholder] {
     opacity: .8;
 }
 .imgGroup{
-    min-height: 200px;
+    min-height: 2000px;
     position: relative;
     margin-left: -13px;
 }
