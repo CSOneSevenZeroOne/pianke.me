@@ -128,9 +128,9 @@ class App extends Component {
                                     </div>
 
                                     <div className="com-textarea has-value" style={{display:"none"}}>
-                                        <textarea placeholder="请输入回复内容"></textarea>
+                                        <textarea id="txtval" placeholder="请输入回复内容"></textarea>
                                         <div className="btn-group">
-                                            <div onClick={this.puitnone.bind(this)}  className="btn">发送</div>
+                                            <div onClick={this.pullnone.bind(this)}  className="btn">发送</div>
                                             <div onClick={this.puitnone.bind(this)} className="btn-cancle">取消</div>
                                         </div>
                                     </div>
@@ -167,6 +167,26 @@ class App extends Component {
         console.log(str);
     }
     puitnone(){
+        $(".com-textarea").css({display:"none"})
+    }
+    pullnone(){
+      var val=$("#txtval").val()
+       var name=window.sessionStorage.getItem("u_name")
+        var newdiv=$("<div></div>")
+        newdiv.addClass("comment-content-others")
+        var newa=$("<a></a>")
+        newa.text(name)
+        var newspan=$("<span></span>")
+        newspan.text("删除")
+        newspan.addClass("comment-del")
+        newdiv.text(val)
+        newa.appendTo(newdiv)
+        newspan.appendTo(newdiv)
+        newdiv.appendTo($(".comment-info"))
+        //实现删除
+        newspan.on("click",function(){
+            newdiv.remove()
+        })
         $(".com-textarea").css({display:"none"})
     }
 
