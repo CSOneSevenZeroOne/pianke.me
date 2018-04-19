@@ -1,0 +1,233 @@
+.radio-info-content {
+    margin-top: 50px;
+}
+.ting-info-content .ting-img {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+.ting-info-content .ting-img img {
+    width: 100%;
+}
+.ting-info-content .ting-info {
+    width: 609px;
+    height: 300px;
+    margin-top: -300px;
+}
+
+.radio-info-content .radio-info {
+    height: 340px;
+    float: right;
+    width: 582px;
+    margin-top: -340px;
+    font-size: 14px;
+    font-weight: lighter;
+    position: relative;
+    color: #999;
+}
+.radio-info-content .radio-info .radio-title {
+    font-size: 40px;
+    color: #333;
+    font-weight: 400;
+}
+.ting-info-content .ting-info .ting-others {
+    color: #999;
+    padding-top: 9px;
+    padding-bottom: 14px;
+    font-weight: 100;
+    font-size: 12px;
+}
+.ting-info-content .ting-info .authors {
+    line-height: 23px;
+    font-weight: 100;
+    font-size: 14px;
+    color: #999;
+}
+.ting-info-content .ting-info .authors {
+    line-height: 23px;
+    font-weight: 100;
+    font-size: 14px;
+    color: #999;
+}
+.ting-info-content .ting-info .authors a {
+    font-weight: 200;
+    color: #57ad68;
+}
+.ting-info-content .ting-info .authors {
+    line-height: 23px;
+    font-weight: 100;
+    font-size: 14px;
+    color: #999;
+}
+.ting-info-content .ting-info .authors a {
+    font-weight: 200;
+    color: #57ad68;
+}
+.ting-info-content .ting-info .play-all {
+    bottom: 0;
+}
+.radio-info-content .radio-info .play-all {
+    bottom: 35px;
+    position: absolute;
+    width: 129px;
+    height: 50px;
+    line-height: 50px;
+}
+.btn-play {
+    /*background-image: url(../img/radio-play.png);*/
+}
+
+.btn-pause, .btn-play {
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 12px center;
+}
+.play-status-btn {
+    color: #57ad68;
+    cursor: pointer;
+    -ms-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    font-weight: 200;
+    border: 1px solid #57ad68;
+    padding-left: 53px;
+}
+.btn-pause {
+    /*background-image: url(../img/radio-pause.png);*/
+}
+
+.btn-pause, .btn-play {
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 12px center;
+}
+.play-status-btn {
+    color: #57ad68;
+    cursor: pointer;
+    -ms-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    font-weight: 200;
+    border: 1px solid #57ad68;
+    padding-left: 53px;
+}
+.ting-info-content .ting-info .ting-like {
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    line-height: 50px;
+    text-align: right;
+    margin-right: 54px;
+}
+
+.ting-like {
+    background-size: 19px;
+    padding-left: 0;
+    margin-right: 30px;
+    margin-left: 60px;
+}
+.ting-share-icon, .ting-like {
+    background-position: 0 center;
+    height: 80px;
+}
+.likes-cpt {
+    color: #999;
+    cursor: pointer;
+    width: 24px;
+    height: 22px;
+    font-size: 14px;
+    background-position: 0 center;
+    padding-left: 34px;
+    line-height: 22px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    /*background-image: url(../img/like.png);*/
+}
+.ting-info-content .ting-info .ting-share {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+}
+
+
+.ting-info-content .ting-info .ting-share .ting-share-icon {
+    padding-left: 0;
+    height: 50px;
+    background-position: right;
+}
+
+.ting-share-icon, .ting-like {
+    background-position: 0 center;
+    height: 80px;
+}
+.share-icon-cpt {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    padding-left: 16px;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    /*background-image: url(../img/share.png);*/
+}
+.ting-info-content .ting-info .ting-share .share-menu {
+    position: absolute;
+}
+.ting-info-content .ting-info .ting-share .share-menu .share-menu-item {
+    margin-top: -130px;
+    position: absolute;
+    margin-left: -230px;
+}
+
+.share-menu .share-menu-item {
+    -ms-box-shadow: 0 1px 6px 0 #e8e8e8;
+    -webkit-box-shadow: 0 1px 6px 0 #e8e8e8;
+    -moz-box-shadow: 0 1px 6px 0 #e8e8e8;
+    box-shadow: 0 1px 6px 0 #e8e8e8;
+    border: 0;
+    padding: 0 29px;
+    margin-left: -220px;
+    margin-top: -65px;
+    width: 284px;
+    height: 80px;
+    -ms-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+.drop-menu {
+    display: none !important;
+    margin-left: -25px;
+    margin-top: -5px;
+    width: 100px;
+    line-height: 36px;
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    -ms-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px 16px;
+}
+.ting-info-content .ting-info .ting-share .share-menu .share-menu-item .share-cpt {
+    position: absolute;
+    margin-left: -5px;
+}
+
+.share-menu .share-menu-item .share-cpt {
+    width: 284px;
+    margin-top: 0;
+}
+.share-cpt {
+    cursor: pointer;
+    margin-top: -32px;
+    float: right;
+}

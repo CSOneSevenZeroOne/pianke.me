@@ -53,6 +53,8 @@ import Setuser from './components/setuser/setuser';
 import Introduce from './components/introduce/introduce';
 
 
+import Radioexp from './components/radio/radio-example/radio-exp.js';
+
 
 let store = createStore((state = {
     hoverword : ""
@@ -67,14 +69,14 @@ let store = createStore((state = {
     }
 })
 
-
+				
 ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
             <div>
-                <Header />
+				<Header />
                 <Login />
-                <Route exact path="/" component={Index2} />
+				<Route exact path="/" component={Index2} />
                 <Route exact path="/client" component={Client} />
                 <Route exact path="/change" component={Change} />
                 <Route exact path="/setuser" component={Setuser} />
@@ -87,7 +89,7 @@ ReactDOM.render(
                 <Route path="/Musicall" component={Musicall} />
                 <Route path="/Movieall" component={Movieall} />
                 <Route path="/Readall" component={Readall} />
-                <Footer />
+				<Footer />
             </div>
         </Provider>
 

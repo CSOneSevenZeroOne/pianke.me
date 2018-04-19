@@ -29,7 +29,7 @@ class Radiolunbo extends Component{
 							<li><img src={banner3} /></li>
 						</ul>
 						<ol>
-							<li>
+							<li className="current">
 								<a href="#"></a>
 							</li>
 							<li>
