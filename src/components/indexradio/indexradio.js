@@ -28,7 +28,7 @@ class App extends Component {
                 <div className="ting-info-box">
                     <div className="radio-info-content ting-info-content">
                         <div className="t-img">
-                            <img src={this.state.obj.imgsrc} alt=""/>
+                            <img src={this.state.obj.imgsrc} style={{width:"300px",height:"300px"}} alt=""/>
                         </div>
                         <div className="radio-info ting-info">
                             <div className="radio-title">

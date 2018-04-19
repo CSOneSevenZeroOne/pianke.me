@@ -84,7 +84,7 @@ class App extends Component {
                             </div>
                             <div className="is-login">
                                 <textarea placeholder="发表你的精彩评论啦" ></textarea>
-                                <div className="btn">
+                                <div  className="btn">
                                     发表评论
                                 </div>
                             </div>
@@ -189,6 +189,7 @@ class App extends Component {
         })
         $(".com-textarea").css({display:"none"})
     }
+
 
     componentDidMount(){
         var word = this.props.state.hoverword;
