@@ -48,22 +48,25 @@ module.exports = function () {
 			contentType: false,
 			success: function (data) {
 				console.log(data)
+				var img="http://localhost:8888/" + data
 				$(".set-icon").find("img").attr("src", "http://localhost:8888/" + data)
-				sessionStorage.setItem("u_img","http://localhost:8888/" + data)
+				sessionStorage.setItem("u_img",img)
 				console.log("上传成功");
-				sessionStorage.setItem("u_tel",$(".set-tel").find("span").eq(1).text()),
 				$.ajax({
 					url: 'http://localhost:8888/setuser/set',
 					type: 'POST',
 					data: {
-						img:data,
+						img:$(".set-icon").find("img").attr("src"),
 						name:$(".set-name").find("input").val(),
-						tel:sessionStorage.getItem("u_tel"),
+						oldtel:sessionStorage.getItem("u_tel"),
+						newtel:$(".set-tel").find("span").eq(1).text(),
 						sex:sessionStorage.getItem("u_sex"),
 						xinxi:$(".set-des").find("textarea").val()
 					},
 					success: function (res) {
-						console.log(res)
+						 sessionStorage.setItem("u_tel",$(".set-tel").find("span").eq(1).text()),
+						sessionStorage.setItem("u_name",$(".set-name").find("input").val()),
+						alert(res)
 					}
 				})
 			}

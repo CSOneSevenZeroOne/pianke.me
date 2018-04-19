@@ -57,5 +57,23 @@ module.exports = function () {
 			}
 		})
 	}
-	
+	$(".outlogin").on("click",function () {
+		$.ajax({
+			url: "http://localhost:8888/login/outlogin",
+			type: "get",
+			data:{
+				tel
+			}
+		}).then((res) => {
+			console.log(res);
+			if(res=="已退出"){
+				sessionStorage.setItem("u_img","")
+				sessionStorage.setItem("u_tel","")
+				sessionStorage.setItem("u_name","")
+				$(".login-btn").eq(0).removeClass("hidden")
+				$(".userinfo").addClass("hidden")
+				$(".massage").addClass("hidden")
+			}
+		})
+	})
 }

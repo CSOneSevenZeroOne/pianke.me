@@ -196,3 +196,21 @@ input[placeholder] {
 .share-cpt .share-dou:hover {
     background-image: url(../client/img/share-dou.png);
 }
+.login .login-box .register-content {
+    margin: 0 auto;
+    margin-bottom: 37px;
+    margin-top: 10px;
+    background-position: center;
+    width: 134px;
+    height: 212px;
+    background-image: url(../client/img/wechat-bg.png);
+    background-size: 134px;
+    background-repeat: no-repeat;
+}
+.login .login-box .register-content img {
+    width: 92px;
+    height: 92px;
+    margin-top: 70px;
+    margin-left: 21px;
+    position: absolute;
+}
