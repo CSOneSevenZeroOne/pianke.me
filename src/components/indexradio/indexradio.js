@@ -123,7 +123,7 @@ class App extends Component {
 
                                     <div className="com-textarea has-value" style={{display:"none"}}>
                                         <textarea placeholder="请输入回复内容"></textarea>
-                                        <div className="btn-group">
+                                        <div className="btn-group" id="bg1">
                                             <div onClick={this.puitnone.bind(this)}  className="btn">发送</div>
                                             <div onClick={this.puitnone.bind(this)} className="btn-cancle">取消</div>
                                         </div>
