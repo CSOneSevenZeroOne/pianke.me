@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route, Link} from "react-router-dom";
 import {connect} from 'react-redux'
 
+import $ from "jquery"
 import "./ting.css"
 
 class App extends Component {
@@ -25,8 +26,8 @@ class App extends Component {
     vFor(arr){
         return arr.map((e, i) =>{
             return <div key={i} className="ting-cpt">
-                <div className="ting-img">
-                    <a target="_blank">
+                <div onClick={this.props.getname.bind(this)} className="ting-img">
+                    <a href="#/indexradio">
                         <img src={this.state.arr[i].src} alt=""/> <span> </span>
                     </a>
                 </div>
@@ -46,8 +47,6 @@ class App extends Component {
                     </div>
                 </div>
             </div>
-
-
         })
     }
 
@@ -61,10 +60,7 @@ class App extends Component {
                 <div className="ting-list">
                     {this.vFor(this.state.arr)}
                 </div>
-
             </div>
-
-
         );
     }
 
@@ -78,8 +74,12 @@ export default connect((state) =>{
     }
 }, (dipatch) =>{
     return {
-        getstate(){
-            dipatch({})
+        getname(e){
+            var $name=$(e.target).parents(".ting-cpt").find(".ting-title").children("a").text();
+            dipatch({
+                type:"ABC",
+                radioname:$name
+            })
         }
     }
 })(App);

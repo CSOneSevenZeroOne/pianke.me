@@ -11,7 +11,7 @@ import "./reset.css"
 
 import Index2 from './components/index2/index2';
 import Indexread from './components/indexread/indexread';
-
+import Indexradio from './components/indexradio/indexradio';
 
 import Header from './components/header/header';
 // 客户端
@@ -57,11 +57,12 @@ import Radioexp from './components/radio/radio-example/radio-exp.js';
 
 
 let store = createStore((state = {
-    hoverword : ""
+    hoverword : "",
+    radioname:""
 }, action) =>{
     switch(action.type){
         case 'ABC':
-            return Object.assign({}, state, {hoverword:action.hoverword});
+            return Object.assign({}, state, {hoverword:action.hoverword,radioname:action.radioname});
         case 'DECREMENT':
             return state
         default:
@@ -76,20 +77,27 @@ ReactDOM.render(
             <div>
 				<Header />
                 <Login />
+
 				<Route exact path="/" component={Index2} />
                 <Route exact path="/client" component={Client} />
                 <Route exact path="/change" component={Change} />
                 <Route exact path="/setuser" component={Setuser} />
                 <Route exact path="/introduce" component={Introduce} />
                 <Route path="/indexread" component={Indexread}/>
-                <Route exact path="/Radio" component={Radio} />
+                <Route path="/indexradio" component={Indexradio} />
+                <Route path="/Radio" component={Radio} />
                 <Route path="/Loveall" component={Loveall} />
                 <Route path="/Travelall" component={Travelall} />
                 <Route path="/Storyall" component={Storyall} />
                 <Route path="/Musicall" component={Musicall} />
                 <Route path="/Movieall" component={Movieall} />
                 <Route path="/Readall" component={Readall} />
+				
 				<Footer />
+
+
+
+
             </div>
         </Provider>
 

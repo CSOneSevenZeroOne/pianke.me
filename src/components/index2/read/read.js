@@ -33,7 +33,7 @@ class App extends Component {
                    <div className="article-content">
                        {e.content}&nbsp;&nbsp;
                        <span className="view-all">
-                           <a> VIEW ALL
+                           <a href="#/indexread" onClick={this.props.getdivtitle}> VIEW ALL
                              <img src="http://qnstatic.pianke.me/public/assets/img/viewall.png" alt=""/>
                           </a>
                        </span>
@@ -78,6 +78,13 @@ export default connect((state) =>{
     return {
         gettitle(e){
             var word=$(e.target).text();
+            dipatch({
+                type:"ABC",
+                hoverword:word
+            })
+        },
+        getdivtitle(e){
+            var word=$(e.target).parents(".left").find(".article-title").children("a").text()
             dipatch({
                 type:"ABC",
                 hoverword:word

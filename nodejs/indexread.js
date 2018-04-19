@@ -31,6 +31,17 @@ router.post('/indexread', function(request, response){
 
 })
 
+//indexradio
+router.post('/indexradio', function(request, response){
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Content-Type", "text/plain;charset=UTF-8");
+    connection.query('select * from `indexradio` ', function(error, results, fields){
+        console.log(results);
+        var str=JSON.stringify(results)
+        response.end(str)
+    })
+
+})
 
 
 

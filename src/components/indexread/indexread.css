@@ -497,3 +497,22 @@ border-radius: 25px;
 font-weight: 100;
 }
 
+/*回复2*/
+.comment-cpt .comment-info .comment-content-others {
+margin-top: 10px;
+background-color: #fafafa;
+border: 1px solid #e8e8e8;
+padding: 8px 10px;
+}
+.comment-cpt .comment-info .comment-content-others a {
+padding-right: 10px;
+color: #999;
+float:left;
+}
+.comment-cpt .comment-info .comment-content-others .comment-del {
+cursor: pointer;
+float: right;
+font-size: 12px;
+color: #999;
+}
+
