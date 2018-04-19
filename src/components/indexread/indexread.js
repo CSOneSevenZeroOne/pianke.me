@@ -20,7 +20,7 @@ class App extends Component {
     render(){
         return (
             <div id="indexread">
-                <div className="index-content main">
+                <div className="index-content maintwo">
                     <div className="article-header-info">
                         <div className="article-type">
                             <a>自由写作</a>
@@ -91,7 +91,7 @@ class App extends Component {
                         </div>
                     </div>
 
-                    <div className="article-comment">
+                    <div className="acle-comment">
                         <div className="comment-title-cpt">
                             <div>
                                 评论 <span>(107 条)</span>

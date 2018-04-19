@@ -3,6 +3,7 @@ import {Route, Link} from "react-router-dom";
 import {connect} from 'react-redux'
 
 import "./hot.css"
+import $ from "jquery"
 
 class App extends Component {
     constructor(props){
@@ -32,16 +33,16 @@ class App extends Component {
     vFor(arr){
         return arr.map((e, i) =>{
             return <div key={i} className="user-cpt">
-                <div className="user-info">
+                <div className="u-info">
                     <div className="user-left">
-                        <a>
+                        <a onClick={this.props.getimgname.bind(this)} href="#/indexuser">
                             <img src={e.src1} alt=""/>
                         </a>
                         <img src={e.src2} alt=""/>
                     </div>
                     <div className="user-right">
-                        <div className="user-name">
-                            <a>{e.name}</a>
+                        <div  className="user-name">
+                            <a id="naname" onClick={this.props.gethotname.bind(this)} href="#/indexuser">{e.name}</a>
                         </div>
                         <div className="user-des">
                             <a>{e.content}</a>
@@ -82,6 +83,20 @@ export default connect((state) =>{
     }
 }, (dipatch) =>{
     return {
+        gethotname(e){
+            dipatch({
+                type:"ABC",
+                hotname:$(e.target).text()
+            })
+        },
+        getimgname(e){
+           var $name=   $(e.target).parents(".u-info").find("#naname").text()
+            console.log($name);
+            dipatch({
+                type:"ABC",
+                hotname:$name
+            })
 
+        }
     }
 })(App);

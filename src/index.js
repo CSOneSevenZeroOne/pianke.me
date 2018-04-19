@@ -12,6 +12,7 @@ import "./reset.css"
 import Index2 from './components/index2/index2';
 import Indexread from './components/indexread/indexread';
 import Indexradio from './components/indexradio/indexradio';
+import Indexuser from './components/indexuser/indexuser';
 
 import Header from './components/header/header';
 // 客户端
@@ -56,11 +57,16 @@ import Introduce from './components/introduce/introduce';
 
 let store = createStore((state = {
     hoverword : "",
-    radioname:""
+    radioname:"",
+    hotname:""
 }, action) =>{
     switch(action.type){
         case 'ABC':
-            return Object.assign({}, state, {hoverword:action.hoverword,radioname:action.radioname});
+            return Object.assign({}, state, {
+                hoverword:action.hoverword,
+                radioname:action.radioname,
+                hotname:action.hotname
+            });
         case 'DECREMENT':
             return state
         default:
@@ -90,7 +96,7 @@ ReactDOM.render(
                 <Route path="/Musicall" component={Musicall} />
                 <Route path="/Movieall" component={Movieall} />
                 <Route path="/Readall" component={Readall} />
-
+                <Route path="/indexuser" component={Indexuser} />
                 <Footer />
             </div>
         </Provider>

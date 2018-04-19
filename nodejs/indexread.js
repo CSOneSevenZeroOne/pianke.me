@@ -40,7 +40,16 @@ router.post('/indexradio', function(request, response){
         var str=JSON.stringify(results)
         response.end(str)
     })
-
+})
+//indexuser
+router.post('/indexuser', function(request, response){
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Content-Type", "text/plain;charset=UTF-8");
+    connection.query('select * from `indexuser` ', function(error, results, fields){
+        console.log(results);
+        var str=JSON.stringify(results)
+        response.end(str)
+    })
 })
 
 
