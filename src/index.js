@@ -96,7 +96,7 @@ ReactDOM.render(
                 <Route path="/Movieall" component={Movieall} />
                 <Route path="/Readall" component={Readall} />
 
-                <Footer />
+                <Footer />x
 
             </div>
         </Provider>
