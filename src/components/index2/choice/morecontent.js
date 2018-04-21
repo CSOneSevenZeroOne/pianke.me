@@ -158,8 +158,8 @@ class App extends Component {
                        // 需要从数组中找到最 矮的那高度
                        var minIndex = getMinIndex(arr);//找到最小的索引
                        oItem[i].style.position = "absolute";//加定位
-                       oItem[i].style.top = arr[minIndex] + "px";  //top的位置
-                       oItem[i].style.left = oItem[i].offsetWidth * minIndex + "px";
+                       oItem[i].style.top = arr[minIndex]+ (Math.floor(i/4)*5)+ "px";  //top的位置
+                       oItem[i].style.left = oItem[i].offsetWidth * minIndex+(minIndex*5) + "px";
                        //把最矮高度，改变
                        arr[minIndex] = arr[minIndex] + oItem[i].offsetHeight;
                    }

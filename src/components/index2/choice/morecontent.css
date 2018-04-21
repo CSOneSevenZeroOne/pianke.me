@@ -105,6 +105,7 @@ opacity: 0;
 }
 .item{
 float:left;
+margin-left:5px;
 }
 /*瀑布流下部分*/
 .card-item{
