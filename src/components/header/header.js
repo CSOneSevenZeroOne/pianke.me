@@ -19,9 +19,9 @@ class header extends Component {
                     <div className="head-logo"><a href=""></a></div>
                     <ul className="navbar">
                         <li className="active"><a href="#/">首页</a></li>
-                        <li className=""><a href="javascript:;">阅读</a></li>
+                        <li className="hidden"><a href="javascript:;">阅读</a></li>
                         <li className=""><a href="#/Radio">电台</a></li>
-                        <li className=""><a href="javascript:;">碎片</a></li>
+                        <li className=""><a href="#/Container">碎片</a></li>
                         <li className="hidden"><a href="javascript:;">动态</a></li>
                         <li className=""><a href="#/client">客户端</a></li>
                     </ul>

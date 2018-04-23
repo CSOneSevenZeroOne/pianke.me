@@ -4,6 +4,7 @@ module.exports = function () {
 		$(this).parent("li").addClass("active").siblings("li").removeClass("active")
 	})
 	$(".userinfo").on("mouseenter",function () {
+		console.log($(".userinfo").find(".drop-menu"))
 		$(".userinfo").find(".drop-menu").show()
 	}).on("mouseleave",function () {
 		$(".userinfo").find(".drop-menu").hide()

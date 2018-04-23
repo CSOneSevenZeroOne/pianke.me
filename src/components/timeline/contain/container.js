@@ -59,7 +59,7 @@ class Container extends Component {
         });
         console.log(e.target);
         if(this.state.bool) {
-            $(e.target).addClass("active").siblings().removeClass("active");
+            $(e.target).addClass("activei").siblings().removeClass("activei");
         };
         if($(e.target).text()==="公开"){
             $("textarea").attr({
@@ -254,7 +254,7 @@ class Container extends Component {
                         <textarea maxLength="140" placeholder="这一刻，你想说什么？"onChange={this.getValue.bind(this)}></textarea>
                         <div className="timeLine-others">
                             <div className="timelineType">
-                                <span onClick={this.changeAll.bind(this)} className="active">公开</span>
+                                <span onClick={this.changeAll.bind(this)} className="activei">公开</span>
                                 <span onClick={this.changeAll.bind(this)}>秘密</span>
                             </div>
                             <div className="upload-img">

@@ -1,14 +1,19 @@
-import React, {Component} from 'react';
-import {Route, Link} from "react-router-dom";
+import React, { Component } from 'react';
+import { Route,Link } from "react-router-dom";
 import {connect} from 'react-redux'
 
+import "./indexuser.css"
+import  $ from  "jquery"
 
-import "./morecontent.css"
-
-class App extends Component {
+class introduce extends Component {
     constructor(props){
         super(props)
         this.state = {
+            style1:{
+                display:"none"
+            },
+			stybool:true,
+            obj:{},
             arr : [{
                 src1 : "http://hpimg.pianke.com/44f3b0492213db58c75c5ad5a790db5920180301.jpg?imageView2/2/w/640/format/jpg",
                 cardtitle : "其实我一个朋友也没有。",
@@ -57,37 +62,9 @@ class App extends Component {
                 username : "阿见", type : "Ting", play : 5.2,
                 comment : 30, like : 294,
                 src2 : "http://hpimg.pianke.com/8b29dc859b74cb196f7b071ab94470d820170126.jpg?imageView2/2/w/90/format/jpg"
-            }, {
-                src1 : "http://hpimg.pianke.com/378d9a108b6fd99070e8d787b820058a20171227.jpg?imageView2/2/w/640/format/jpg",
-                cardtitle : "你与太阳不能直视",
-                username : "阳芷的时光", type : "Ting", play : 5.2,
-                comment : 30, like : 294,
-                src2 : "http://pkimg.image.alimmdn.com/upload/20170721/1d91482cc6be84c406465f17f4c8299a.jpg@90w_90h_1e_1c_85Q.jpg"
-            }, {
-                src1 : "http://hpimg.pianke.com/13ecdf92e918808102efcb0530c66bc720180301.jpeg?imageView2/2/w/640/format/jpg",
-                cardtitle : "拜个晚年——愿你我都活成自己的角儿",
-                username : "阳芷的时光", type : "Ting", play : 5.2,
-                comment : 30, like : 294,
-                src2 : "http://pkimg.image.alimmdn.com/upload/20170721/1d91482cc6be84c406465f17f4c8299a.jpg@90w_90h_1e_1c_85Q.jpg"
-            }, {
-                src1 : "http://hpimg.pianke.com/7be03651519fabdbbc21e066ee44a65420170906.jpeg?imageView2/2/w/640/format/jpg",
-                cardtitle : "路过你的七月",
-                username : "阳芷的时光", type : "Ting", play : 5.2,
-                comment : 30, like : 294,
-                src2 : "http://pkimg.image.alimmdn.com/upload/20170721/1d91482cc6be84c406465f17f4c8299a.jpg@90w_90h_1e_1c_85Q.jpg"
-            }, {
-                src1 : "http://hpimg.pianke.com/f9270fcc93c750a56ff98e51b79e4cba20180211.jpg?imageView2/2/w/640/format/jpg",
-                cardtitle : "去纽约",
-                username : "阳芷的时光", type : "Ting", play : 5.2,
-                comment : 30, like : 294,
-                src2 : "http://pkimg.image.alimmdn.com/upload/20170721/1d91482cc6be84c406465f17f4c8299a.jpg@90w_90h_1e_1c_85Q.jpg"
-            }],
-            choicebool:true,
-            loadingbool:true
+            }]
         }
-
     }
-
     vFor(arr){
         return arr.map((e, i) =>{
             return <div key={i} className="item">
@@ -120,11 +97,74 @@ class App extends Component {
             </div>
         })
     }
-    getblock(){
+    render() {
+        return (
+         <div className="container">
+			 <div className="user-base-content">
+				 <div className="user-info-box">
+					 <div className="user-icon-group">
+						 <div className="user-icon">
+							 <img src={this.state.obj.u_img} />
+							</div>
+						 </div>
+					 <div className="user-info">
+						 <div className="user-name">
+							 <span>{this.state.obj.u_name}</span>
+                             <span onClick={this.getfocus.bind(this)} className="btn-focus" style={{display:this.state.stybool?"block":"none"}}>
+                                关注
+                             </span>
+                             <span onClick={this.getfocus.bind(this)} className="btn-focus btn-focus-yes" style={{display:this.state.stybool?"none":"block"}}>
+                                已关注
+                             </span>
+                             <img src="http://qnstatic.pianke.me/public/assets/img/user_author.png" width="52px" style={this.state.style1} /> <img src="http://qnstatic.pianke.me/public/assets/img/user_craftsman.png" width="52px" style={this.state.style1} />
+							 <img src="http://qnstatic.pianke.me/public/assets/img/user_designer.png" width="52px" style={this.state.style1} /> <img src="http://qnstatic.pianke.me/public/assets/img/user_illustrator.png" width="52px" style={this.state.style1} />
+							 <img src="http://qnstatic.pianke.me/public/assets/img/user_musician.png" width="52px" style={this.state.style1} /> <img src="http://qnstatic.pianke.me/public/assets/img/user_anchor.png" width="52px" style={this.state.style1} />
+							 <span className="pianke-mail" style={this.state.style1}></span>
+						 </div>
+						 <div className="user-des">{this.state.obj.u_xinxi}</div>
+						 <div className="user-others"><a className="">500<br /><span>粉丝</span></a> <a className="">760<br /><span>关注</span></a> <a className="">1000<br /><span>访客</span></a></div></div></div> <div className="user-menu"><div className="type-title-cpt"></div></div>
+			 </div>
+			 <div className="data-title data-title-home"><span className="active"><a>全部</a>(100)</span> <span className=""><a>文章</a>(0)</span> <span className=""><a>碎片</a>(0)</span> <span className=""><a>Ting</a>(0)</span> </div>
+			 <div style={this.state.style1} className="data-title data-title-home"><span className="active"><a>评论</a>(0)</span> <span className=""><a>喜欢</a>(0)</span> <span className=""><a>粉丝</a>(0)</span> <span className=""><a>片邮</a>(0)</span> </div>
+			 <div id="pubul">
+                 {this.vFor(this.state.arr)}
+                 {this.vFor(this.state.arr)}
+                 {this.vFor(this.state.arr)}
+                  </div>
+
+         </div>
+		);
+    }
+    getfocus(){
+             this.setState({
+                 stybool:!this.state.stybool
+             })
+    }
+	componentDidMount(){
+		require("./indexuserjs")()
+
+
+        //ajax请求数据
+        var hotname = this.props.state.hotname;
+        console.log(this.props.state.hotname);
+        var url = "http://localhost:8888/indexuser"
+        this.serverRequest = $.post(url, function(result){
+            var res = JSON.parse(result)
+            for(var i = 0; i < res.length; i++){
+                if(res[i].u_name == hotname){
+                    this.setState({
+                        obj : res[i]
+                    });
+                    var str = JSON.stringify(res[i])
+                    console.log(str);
+                    window.sessionStorage.setItem('indexuser', str);
+                }
+            }
+        }.bind(this));
+        var obj = JSON.parse(window.sessionStorage.getItem('indexuser') || '{}');
         this.setState({
-            choicebool:false,
-            loadingbool:false
-        })
+            obj : obj
+        });
 
         //瀑布流
         function getMinIndex(tempArr){
@@ -138,79 +178,46 @@ class App extends Component {
             }
             return minIndex;
         }
+        //开始实现瀑布流
+        setTimeout(function(){
+            var oItem = document.getElementsByClassName("item");
+            // console.log(oItem);
+            var arr = [];
+            for(var i = 0; i < oItem.length; i++){
+                if(i < 4){
+                    arr.push(oItem[i].offsetHeight);//把前面4个的高度添加到数组
+                    // console.log(arr);
+                } else {
+                    // 需要从数组中找到最 矮的那高度
+                    var minIndex = getMinIndex(arr);//找到最小的索引
+                    oItem[i].style.position = "absolute";//加定位
+                    oItem[i].style.top = arr[minIndex]+(Math.floor(i/4)*5) + "px";  //top的位置
+                    oItem[i].style.left = oItem[i].offsetWidth * minIndex+(minIndex*5) + "px";
+                    //把最矮高度，改变
+                    arr[minIndex] = arr[minIndex] + oItem[i].offsetHeight;
+                }
+            }
+        },10)
 
-        var self=this
-           setTimeout(function(){
+	}
 
-               self.setState({
-                   loadingbool:true
-               })
-
-               //开始实现瀑布流
-               var oItem = document.getElementsByClassName("item");
-               // console.log(oItem);
-               var arr = [];
-               for(var i = 0; i < oItem.length; i++){
-                   if(i < 4){
-                       arr.push(oItem[i].offsetHeight);//把前面4个的高度添加到数组
-                       // console.log(arr);
-                   } else {
-                       // 需要从数组中找到最 矮的那高度
-                       var minIndex = getMinIndex(arr);//找到最小的索引
-                       oItem[i].style.position = "absolute";//加定位
-                       oItem[i].style.top = arr[minIndex]+ (Math.floor(i/4)*5)+ "px";  //top的位置
-                       oItem[i].style.left = oItem[i].offsetWidth * minIndex+(minIndex*5) + "px";
-                       //把最矮高度，改变
-                       arr[minIndex] = arr[minIndex] + oItem[i].offsetHeight;
-                   }
-               }
-           },10)
-
-
+    componentWillUnmount(){
+        this.serverRequest.abort();
     }
-
-    render(){
-        return (
-            <div>
-                <div onClick={this.getblock.bind(this)} className="more-botton" style={{display:this.state.choicebool?"block":"none"}}>
-                    <div className="btn-box">
-                        <div className="btn btn-more  ">
-                            查看更多精选内容
-                        </div>
-                    </div>
-                </div>
-                <div id="more-content" className="bigmain" style={{display:this.state.choicebool?"none":"block"}}>
-                    <div className="past-content-title">
-                        <div className="title-cpt">
-                            往期精选
-                        </div>
-                    </div>
-                    <div className="img-group-cpt">
-                        {this.vFor(this.state.arr)} {this.vFor(this.state.arr)} {this.vFor(this.state.arr)} {this.vFor(this.state.arr)} {this.vFor(this.state.arr)}
-                    </div>
-                </div>
-
-            </div>
-        );
-    }
-
-    componentDidMount(){
-
-    }
-
-
 }
 
 
-export default connect((state) =>{
+export default connect((state) => {
     // console.log(state)
     return {
         state
     }
-}, (dipatch) =>{
+}, (dipatch) => {
     return {
         getstate(){
-            dipatch({})
+            dipatch({
+
+            })
         }
     }
-})(App);
+})(introduce);

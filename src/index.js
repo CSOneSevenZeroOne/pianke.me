@@ -16,6 +16,7 @@ import Container from './components/timeline/contain/container'
 import Index2 from './components/index2/index2';
 import Indexread from './components/indexread/indexread';
 import Indexradio from './components/indexradio/indexradio';
+import Indexuser from './components/indexuser/indexuser';
 
 import Header from './components/header/header';
 // 客户端
@@ -59,13 +60,19 @@ import Introduce from './components/introduce/introduce';
 
 
 
+
 let store = createStore((state = {
     hoverword : "",
-    radioname:""
+    radioname:"",
+    hotname:""
 }, action) =>{
     switch(action.type){
         case 'ABC':
-            return Object.assign({}, state, {hoverword:action.hoverword,radioname:action.radioname});
+            return Object.assign({}, state, {
+                hoverword:action.hoverword,
+                radioname:action.radioname,
+                hotname:action.hotname
+            });
         case 'DECREMENT':
             return state
         default:
@@ -73,31 +80,30 @@ let store = createStore((state = {
     }
 })
 
-
+				
 ReactDOM.render(
     <HashRouter>
         <Provider store={store}>
             <div>
-                <Header />
+				<Header />
                 <Login />
-                <Route path="/container" component={Container} />
-                <Route exact path="/" component={Index2} />
-                <Route  path="/client" component={Client} />
-                <Route  path="/change" component={Change} />
-                <Route  path="/setuser" component={Setuser} />
-                <Route  path="/introduce" component={Introduce} />
+				 <Route exact path="/" component={Index2} />
+                <Route exact path="/client" component={Client} />
+                <Route exact path="/change" component={Change} />
+                <Route exact path="/setuser" component={Setuser} />
+                <Route exact path="/introduce" component={Introduce} />
+              <Route path="/container" component={Container} />
                 <Route path="/indexread" component={Indexread}/>
-                <Route  path="/indexradio" component={Indexradio} />
-                <Route  path="/Radio" component={Radio} />
+                <Route path="/indexradio" component={Indexradio} />
+               <Route path="/Radio" component={Radio} />
                 <Route path="/Loveall" component={Loveall} />
                 <Route path="/Travelall" component={Travelall} />
                 <Route path="/Storyall" component={Storyall} />
                 <Route path="/Musicall" component={Musicall} />
                 <Route path="/Movieall" component={Movieall} />
                 <Route path="/Readall" component={Readall} />
-
-                <Footer />x
-
+                <Route path="/indexuser" component={Indexuser} />
+                <Footer />
             </div>
         </Provider>
 
