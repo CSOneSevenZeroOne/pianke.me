@@ -349,6 +349,7 @@ textarea[placeholder] {
     width: 290px;
     background-color: #fff;
     font-size: 12px;
+    margin-right:10px;
 }
 .imgGroup .card-top-img img{
     width: 100%;
